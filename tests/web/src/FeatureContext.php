@@ -347,7 +347,14 @@ class FeatureContext extends MinkContext implements SnippetAcceptingContext
         $found = Util::waitForAndSee($session, $value);
     }
 
-
+    /**
+     * @When /^I wait for and follow "([^"]*)"$/
+     */
+    public function iWaitForAndFollow($id)
+    {
+        $session = $this->getSession();
+        $found = Util::waitForAndFollow($session, $id);
+    }
 
     /**
      * @When /^I log in as admin$/

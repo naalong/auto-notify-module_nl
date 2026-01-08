@@ -67,6 +67,10 @@ One-time initial setup:
             sudo systemctl reload apache2
             </pre>
 
+6. In the php.ini file for apache, make sure that the following is set:
+
+    [xdebug]
+    xdebug.mode=coverage
 
 Setup each time before tests are run
 ---------------------------------------

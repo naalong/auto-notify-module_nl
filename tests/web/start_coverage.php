@@ -10,10 +10,13 @@ use SebastianBergmann\CodeCoverage\CodeCoverage;
 use SebastianBergmann\CodeCoverage\Filter;
 use SebastianBergmann\CodeCoverage\Driver\Selector;
 
+$directory = __DIR__.'/coverage-data/';
+
 $codeCoverageId = null;
 if (array_key_exists('auto-notify-code-coverage-id', $_COOKIE)) {
     $codeCoverageId = $_COOKIE['auto-notify-code-coverage-id'];
 }
+
 
 
 if (!empty($codeCoverageId)) {
@@ -30,7 +33,6 @@ if (!empty($codeCoverageId)) {
 
     # Excluded files
     # $filter->excludeFile(__DIR__.'/../../web/test.php');
-
 
     $selector = new Selector;
 

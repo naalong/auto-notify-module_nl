@@ -54,7 +54,7 @@ class Util
 
         $page = $session->getPage();
 
-        $page->fillField('username', $username);
+        Util::waitForAndFillField($session, 'username', $username);
         $page->fillField('password', $password);
         $page->pressButton('login_btn');
     }
@@ -105,6 +105,13 @@ class Util
         Util::waitForElement($session, $buttonId, $timeout);
         $page = $session->getPage();
         $page->pressButton($buttonId);
+    }
+
+    public static function waitForAndFillField($session, $fieldId, $fieldValue, $timeout = 10)
+    {
+        Util::waitForElement($session, $fieldId, $timeout);
+        $page = $session->getPage();
+        $page->fillField($fieldId, $fieldValue);
     }
 
     public static function waitForAndSee($session, $value, $timeout = 10)
