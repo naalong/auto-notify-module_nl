@@ -195,6 +195,7 @@ class RedCapDb
                         $userRights->setApiExport($row['api_export']);
                         $userRights->setApiImport($row['api_import']);
                         $userRights->setMobileApp($row['mobile_app']);
+                        $userRights->setExpirationDate($row['expiration']);
                     }
                 } else {
                     $userRights = $user->getUserRightsForProject($projectId);

@@ -476,6 +476,9 @@ class Conditions
             $query .= ",\n" . "        "
                 . "IF(rights.role_id is NULL, rights.mobile_app, roles.mobile_app) as mobile_app";
 
+            $query .= ",\n" . "        "
+                . "expiration";
+
             $query .= ",\n" . "        roles.role_name";
         }
 

@@ -41,7 +41,7 @@ class Variable implements \JsonSerializable
         $this->optgroup = '';
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         return get_object_vars($this);
     }

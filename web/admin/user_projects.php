@@ -162,7 +162,7 @@ if (!empty($queryName)) {
                 <thead>
                     <tr> 
                         <th colspan="15">Project Information</th>
-                        <th colspan="7">User Project Rights</th>
+                        <th colspan="8">User Project Rights</th>
                     </tr>
                     <tr> 
                         <th>Project ID</th>
@@ -189,6 +189,7 @@ if (!empty($queryName)) {
                         <th>API Export</th>
                         <th>API Import</th>
                         <th>Mobile App</th>
+                        <th>Expiration Date</th>
                     </tr>
                 </thead>
 
@@ -256,6 +257,8 @@ if (!empty($queryName)) {
                         $mobileAppLabel = $variable->getSelectValueLabel($mobileApp);
                         $mobileAppLabel = ProjectInfo::convertTrueFalseToYesNo($mobileAppLabel);
 
+                        $expirationDate = $userProject->getExpirationDate();
+
                         echo "<tr>";
                         echo "<td style=\"text-align: right;\">{$projectId}</td>";
                         echo '<td><a href="' . $projectUrl . '" target="_blank">' . $projectName . '</a></td>';
@@ -282,6 +285,7 @@ if (!empty($queryName)) {
                         echo "<td>{$apiExportLabel}</td>";
                         echo "<td>{$apiImportLabel}</td>";
                         echo "<td>{$mobileAppLabel}</td>";
+                        echo "<td>{$expirationDate}</td>";
                         echo "</tr>\n";
                     }
                     ?>

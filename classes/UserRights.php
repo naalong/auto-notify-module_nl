@@ -22,6 +22,7 @@ class UserRights
     private $apiImport;
     private $mobileApp;
 
+    private $expirationDate;
 
     private $externalModuleIds;
     private $cppDestinationProjectIds;  // cross-project piping destination projects IDs
@@ -138,6 +139,16 @@ class UserRights
     public function setMobileApp($mobileApp)
     {
         $this->mobileApp = $mobileApp;
+    }
+
+    public function getExpirationDate()
+    {
+        return $this->expirationDate;
+    }
+
+    public function setExpirationDate($expirationDate)
+    {
+        $this->expirationDate = $expirationDate;
     }
 
     public function getExternalModuleIds()
